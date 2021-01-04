@@ -17,13 +17,26 @@
         <div class="header_com" id="logo"><a href="{% url 'allrecipes' %}" id="logo_a">MYFREE</a></div>
         <div class="header_com" id="profile_div" style="right: 2rem;"><a href="#"><img id="profile"
                     src="ecbdb551f2b5be72c5a087147254bc71 (1).gif"></a></div>
-        <div class="header_com" id="username" style="right: 7rem;"><a href="{% url 'refrigerator' %}" id="username_a">{{user.username}}</a></div>
+        <div class="header_com" id="username" style="right: 7rem;"><a href="{% url 'refrigerator' %}"
+                id="username_a">{{user.username}}</a></div>
     </header>
     <!-- 왼쪽 여백 -->
     <div id="left"></div>
     {% block content %}
-    
+
     {% endblock %}
+    <div id="frogue-container" class="position-right-bottom" data-chatbot="2de9627c-eefd-4563-b04e-f76c5bdc2ed1"
+        data-user="사용자ID" data-init-key="value"></div>
+    <!-- data-init-식별키=값 으로 셋팅하면 챗플로우에 파라미터와 연동가능. 식별키는 소문자만 가능 -->
+    <script>
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) { return; }
+            js = d.createElement(s); js.id = id;
+            js.src = "https:\/\/danbee.ai/js/plugins/frogue-embed/frogue-embed.min.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'frogue-embed'));
+    </script>
 </body>
 
 </html>
